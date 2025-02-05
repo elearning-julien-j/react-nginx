@@ -16,6 +16,18 @@ async function run() {
 }
 run().catch(console.dir);
 
+MongoClient.connect(uri, async (err, client) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("CONNEXION DB OK !");
+    count = client.db("test").collection("count");
+    if ((await count.countDocuments()) === 0) {
+      count.insertOne({ count: 0 });
+    }
+  }
+});
+
 const app = express();
 
 app.get("/api/count", (req, res) => {
