@@ -1,4 +1,5 @@
-FROM node:lts-alpine
+FROM node:alpine
+# USER node
 WORKDIR /app
 COPY package*.json .
 RUN npm install
