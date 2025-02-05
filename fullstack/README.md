@@ -3,11 +3,10 @@
 ## Installation 
 
 ### Prod case
-# Docker server 
 
-## Installation 
-
-### Prod case
+```
+docker compose -f docker-compose.dev.yml up --build db
+```
 
 ```
 docker exec -it db mongosh
