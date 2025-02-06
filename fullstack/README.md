@@ -64,3 +64,7 @@ docker compose -f docker-compose.dev.yml up
 docker compose -f docker-compose.prod.yml up
 ```
 
+
+```
+MONGO_USERNAME=paul MONGO_PWD=123 docker compose -f docker-compose.prod.yml up --build
+```
